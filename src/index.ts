@@ -20,8 +20,9 @@ app.use(cors(options));
 //routers
 import { routerPets } from "./pets/infrastructure/rest/pets.router";
 
-app.use("/pets", routerPets);
-app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+app.use("/api/pets", routerPets);
+app.use('/api/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.listen(process.env.PORT, () => {
   console.log(`Application started on port ${port}`);
